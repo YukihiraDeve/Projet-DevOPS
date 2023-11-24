@@ -21,7 +21,7 @@ jobs:
       run: npm install
 
     - name: Run Unit Tests
-      run: npm test && docker run my-app /path/to/tests
+      run: npm test
 
     - name: Push to Docker Registry
       if: success()
