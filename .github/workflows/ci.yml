@@ -18,8 +18,7 @@ jobs:
       run: docker build -t my-app .
 
     - name: Run Unit Tests
-      run: npm test
-      run: docker run my-app /path/to/tests
+      run: npm test && docker run my-app /path/to/tests
 
     - name: Push to Docker Registry
       if: success()
