@@ -26,7 +26,7 @@ jobs:
     - name: Push to Docker Registry
       if: success()
       run: |
-        echo "DOCKER_PASSWORD=dckr_pat_NVtHRJ4mrRuORM-tjG1AIVVUHSo" | docker login -u "yukihiradeve" --password-stdin
+        echo "DOCKER_PASSWORD=$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         docker tag my-app my-registry/my-app
         docker push my-registry/my-app
       env:
