@@ -1,5 +1,16 @@
 import request from 'supertest';
-import { app } from './app';  // Assurez-vous que le chemin d'importation est correct
+import { app, server } from './app';  // Assurez-vous que le chemin d'importation est correct
+
+
+beforeAll(done => {
+  done();
+});
+
+
+afterAll(done => {
+  server.close(done);
+});
+
 
 describe('GET /', () => {
   it('devrait retourner Bonjour depuis le serveur Express!', async () => {
