@@ -5,7 +5,23 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node ./dist/app.js",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    }
   },
   "repository": {
     "type": "git",
@@ -19,9 +35,16 @@
   "homepage": "https://github.com/YukihiraDeve/Projet-DevOPS#readme",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "supertest": "^6.3.3"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.10",
+    "@types/supertest": "^2.0.16",
+    "install": "^0.13.0",
+    "npm": "^10.2.4",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.2"
   }
 }
